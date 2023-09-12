@@ -6,12 +6,11 @@ sort: 1
 
 机械臂控制的代码code中，分别是include，src，log以及usrlib。
 
-+ [include](https://github.com/unitreerobotics/z1_controller) 存储着直接控制机械臂的源码。
-+ [src](https://github.com/unitreerobotics/z1_sdk) 包含了用于控制机械臂的一些接口，用户在创建自己的程序使用z1机械臂时需要包含该文件夹。
-+ [log](https://github.com/unitreerobotics/unitree_ros) 用于机械臂仿真，其中包含了宇树四足产品Go1, A1, Aliengo, Laikago和机械臂产品Z1的仿真文件。
-+ [usrlib](https://github.com/unitreerobotics/z1_ros/tree/noetic)（包含unitree_ros）, 提供noetic moveit1支持
++ [include](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/include) 存储着直接控制机械臂的源码。
++ [src](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/src) 包含了用于控制机械臂的一些接口，用户在创建自己的程序使用z1机械臂时需要包含该文件夹。
++ [log](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/log) 用于机械臂仿真，其中包含了宇树四足产品Go1, A1, Aliengo, Laikago和机械臂产品Z1的仿真文件。
++ [usrlib](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/usrlib)（包含unitree_ros）, 提供noetic moveit1支持
 
-**注意**：z1_ros中也包含`z1_controller`和`z1_sdk`， 提供的接口可以直接发送UDP结构体进行通信，与上述z1_sdk不兼容。
 
 ## 1. z1_controller
 
