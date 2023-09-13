@@ -13,7 +13,7 @@
 ## SDK下载地址
 
 + 程序控制：[z1_controller](https://github.com/unitreerobotics/z1_controller)
-+ SDK接口：[z1_sdk](https://github.com/unitreerobotics/z1_sdk)
++ SDK接口：[code](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code)
 
 ## 注意事项
 
