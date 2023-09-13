@@ -11,11 +11,11 @@ sort: 1
 + [log](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/log) sdk中存放log的文件夹。
 + [usrlib](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/usrlib)包含SDK所需的so文件
 
-## 1. z1_controller
+## 1. include
 
 除以下提到的文件外，用户无需查看该文件夹下的其他文件。
 
-### 1.1 build/z1_ctrl
+### 1.1 mathfunc.h
 
 用户创建build文件后编译程序，最终可执行程序名为z1_ctrl，每次用户使用机械臂时都需要执行该程序。
 
@@ -23,7 +23,7 @@ sort: 1
 + 调用`./z1_ctrl k`可以使用键盘控制机械臂运动
 + 直接调用`./z1_ctrl`需使用SDK控制机械臂
 
-### 1.2 CMakeLists.txt
+### 1.2 Ti5BASIC.h
 
 用户在使用时需要根据自身使用方式自行选择采用实际控制或仿真，只需注释掉不需要的一行即可。更改完毕后需重新编译一下程序。
 
@@ -32,12 +32,12 @@ set(COMMUNICATION UDP)
 # set(COMMUNICATION ROS)
 ```
 
-### 1.3 unitreeArmTools
+### 1.3 Ti5LOGIC.h
 
 该文件用于更改机械臂IP（默认192.168.123.110）
 使用方法：使用网线连接好机械臂和PC（**更改IP需连接右端备用网口**），终端执行`python3 unitreeArmTools.py`，按提示输入信息即可。
 
-### 1.4 config/config.xml
+### 1.4 Ti5MOVE.h
 
 该文件只在z1_ctrl启动时读取一次：
 
