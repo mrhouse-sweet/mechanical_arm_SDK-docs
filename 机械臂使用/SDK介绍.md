@@ -7,7 +7,7 @@ sort: 1
 机械臂控制的代码code中，分别是`include`，`src`，`log`以及`usrlib`。
 
 + [include](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/include) 存储着机械臂所需的头文件。
-+ [src](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/src) 一版控制机械臂的文件放在此处，其中main.cpp是一个示例程序。
++ [src](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/src) 一版控制机械臂的文件放在此处，其中`main.cpp`是一个示例程序。
 + [log](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/log) sdk中存放log的文件夹。
 + [usrlib](https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs/tree/main/code/usrlib)包含SDK所需的so文件
 
@@ -35,23 +35,24 @@ sort: 1
 
 ### 1.5 tool.h
 
-该文件是一些tool，具体函数使用及参数请查看该文件。
+该文件是一些`tool`，具体函数使用及参数请查看该文件。
 
 ## 2. can
-该文件包含can通讯的头文件，机械臂是通过can通讯与控制机联通的，具体函数功能及参数请查看里面所包含的文件中注释了解函数作用。
+该文件包含`can`通讯的头文件，机械臂是通过can通讯与控制机联通的，具体函数功能及参数请查看里面所包含的文件中注释了解函数作用。
 
 ## 3.src
 ### 3.1 main.cpp
 
-该文件是一个简单的示例程序，调用了Ti5BASIC.h中的query_can()函数，首先查找是否连接了can设备，然后调用mechanical_arm_origin()让机械臂回到初始位置，接下来调用tool.h中的show_value()函数，显示此时的位姿信息，还有一个简单的类似码垛的动作。
+该文件是一个简单的示例程序，调用了`Ti5BASIC.h`中的`query_can()`函数，首先查找是否连接了can设备，然后调用`mechanical_arm_origin()`让机械臂回到初始位置，接下来调用`tool.h`中的`show_value()`函数，显示此时的位姿信息，还有一个简单的类似码垛的动作。
 
 ### 3.2 编译
 
-最后通过一下命令进行编译生成可执行文件move_sov。(注意：以下路径是默认路径，如果修改了路径要替换成自己的)
+最后通过一下命令进行编译生成可执行文件`move_sov`。(注意：以下路径是默认路径，如果修改了路径要替换成自己的)
 ```
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
 **运行**:
-
+```
 sudo ./move_sov
+```
 注意机械臂处在一个安全的环境中
