@@ -45,9 +45,13 @@ sort: 1
 
 该文件是一个简单的示例程序，调用了`Ti5BASIC.h`中的`query_can()`函数，首先查找是否连接了can设备，然后调用`mechanical_arm_origin()`让机械臂回到初始位置，接下来调用`tool.h`中的`show_value()`函数，显示此时的位姿信息，还有一个简单的类似码垛的动作。
 
+### 3.2 gcc.sh
+
+该文件中的内容是编译命令，编译的时候可以使用该命令直接编译，也可以使用g++命令+对应参数直接编译
+
 ### 3.2 编译
 
-最后通过一下命令进行编译生成可执行文件`move_sov`。(注意：以下路径是默认路径，如果修改了路径要替换成自己的)
+最后执行`gcc.sh`文件进行编译或通过一下命令进行编译生成可执行文件`move_sov`。(注意：以下路径是默认路径，如果修改了路径要替换成自己的)
 ```
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
