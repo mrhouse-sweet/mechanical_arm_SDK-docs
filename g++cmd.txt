@@ -1,4 +1,4 @@
 export CPLUS_INCLUDE_PATH=/mnt/hgfs/mechanical_arm_5_0/include:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/hgfs/mechanical_arm_4_0/include/can
-g++ main.cpp -L../include/can -lmylibscan -lcontrolcan -o move_sov
+g++ test.cpp -L./include -lmylibti5   -lfmt -L./include/can -lmylibscan -lcontrolcan  -o move_sov
 sudo ./move_sov
