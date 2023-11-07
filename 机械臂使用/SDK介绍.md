@@ -23,6 +23,31 @@ sort: 1
 
 机械臂控制基础库，包含了基本控制以及信息，用户在使用时需要根据自身使用方式自行选择调用。
 
+bool inspect_brake();//函数功能：查询机械臂是否停止运动
+
+
+void exit_progrem();//函数功能：退出程序
+
+std::string SDK_version();//函数功能：SDK版本号
+
+void loggerinfo(string content);//函数功能：添加log
+
+void login();//函数功能：登录can设备
+
+void logout();//函数功能：登出can设备
+
+std::vector<std::string> query_can();//函数功能：查询can设备号
+
+void get_elc_info();//函数功能：获取电机参数
+
+void set_elc_info(uint32_t *elc_parameterlist,int elc_num, int parameterType,uint32_t elc_value);//设置电机参数
+
+参数: 
+  elc_parameterlist 要设置的对应电机，
+  elc_value 要设置的第n个电机，
+  parameterType 要设置的项目，
+  elc_value 新值
+
 ### 1.3 Ti5LOGIC.h
 
 该文件是机械臂的算法库，包括正逆解，碰撞检测，规划路径等。
