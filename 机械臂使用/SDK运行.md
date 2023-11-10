@@ -20,3 +20,4 @@ g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -l
 
 当执行该条命令后，终端会打印`找到的 CAN 设备序列号：USBCAN-31F10001C21`语句(这里的设备号会随着不同的can设备改变不是固定的)，我们可以看到已经成功连接can设备，并于机械臂建立了通讯。
 接下来机械臂会按照程序执行相应的动作。
+
