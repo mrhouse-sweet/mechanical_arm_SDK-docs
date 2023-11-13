@@ -1,17 +1,55 @@
 ---
 sort: 3
 ---
+# 环境安装
 
+运动控制程序可以在Ubuntu 18.04以上的X86架构下的linux平台运行，
+
+建议使用 Ubuntu22.04
+
+## 依赖安装
+
++ `libspdlog-dev`
++ `libopencv-dev`
++ `libudev-dev`
+
+```bash
+sudo apt install -y libspdlog-dev libopencv-dev libudev-dev
+```
++ `将usrlib中的libcontrolcan.so  libmylibscan.so libmylibti5.so文件拷贝到/usr/lib/下`
+
+```bash
+sudo cp libcontrolcan.so  libmylibscan.so libmylibti5.so /usr/lib
+```
+
++ [pybind11](https://pybind11.readthedocs.io/en/stable/)
+
+如果需要使用python接口，需安装pybind11
+
+```bash
+# Install pybind11
+git clone https://github.com/pybind/pybind11.git
+cd pybind11
+mkdir build && cd build
+cmake .. -DPYBIND11_TEST=OFF
+make -j
+sudo make install
+```
 # SDK运行
 
 ## 实机控制
 
-**①** 首先对机械臂进行通电
+**①** 首先对机械臂进行通电 
 
 **②** 编译src文件夹下的文件，生成可执行文件，例：
 
 ```shell
-./gcc.sh
+首次编译需要执行以下两条命令(注意：“/mnt/hgfs/mechanical_arm_5_0/”这里替换成自己的目录)
+export CPLUS_INCLUDE_PATH=/mnt/hgfs/mechanical_arm_5_0/include:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/hgfs/mechanical_arm_5_0/include/can
+
+然后进行编译：
+sudo ./gcc.sh(注意，这里要先给gcc.sh文件可执行权限，命令是：sudo chmod +x gcc.sh)
 或者使用：
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
