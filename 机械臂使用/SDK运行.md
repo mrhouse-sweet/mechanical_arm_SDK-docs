@@ -8,6 +8,7 @@ sort: 3
 建议使用 Ubuntu22.04
 
 首先在终端中输入以下命令下载SDK：
+cd /home
 git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
 ## 依赖安装
 
@@ -21,7 +22,8 @@ sudo apt install -y libspdlog-dev libopencv-dev libudev-dev
 + `将usrlib中的libcontrolcan.so  libmylibscan.so libmylibti5.so文件拷贝到/usr/lib/下`
 
 ```bash
-sudo cp libcontrolcan.so  libmylibscan.so libmylibti5.so /usr/lib
+cd mechanical_arm_5_0_SDK/code/usrlib
+sudo cp * /usr/lib
 ```
 
 + [pybind11](https://pybind11.readthedocs.io/en/stable/)
@@ -46,12 +48,13 @@ sudo make install
 **②** 编译src文件夹下的文件，生成可执行文件，例：
 
 ```shell
-首次编译需要执行以下两条命令(注意：“/mnt/hgfs/mechanical_arm_5_0/”这里替换成自己的目录)
-export CPLUS_INCLUDE_PATH=/mnt/hgfs/mechanical_arm_5_0/include:$CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/hgfs/mechanical_arm_5_0/include/can
+首次编译需要执行以下两条命令
+cd mechanical_arm_5_0_SDK/code/src
+export CPLUS_INCLUDE_PATH=~/mechanical_arm_5_0_SDK/code/include:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/mechanical_arm_5_0_SDK/code/include/can
 
 然后进行编译：
-sudo ./gcc.sh(注意，这里要先给gcc.sh文件可执行权限，命令是：sudo chmod +x gcc.sh)
+sudo sh ./gcc.sh
 或者使用：
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
