@@ -8,7 +8,9 @@ sort: 3
 建议使用 Ubuntu22.04
 
 首先在终端中输入以下命令下载SDK：
-cd /home
+
+cd ~
+
 git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
 ## 依赖安装
 
