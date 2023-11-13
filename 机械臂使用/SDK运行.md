@@ -9,7 +9,7 @@ sort: 3
 
 首先在终端中输入以下命令下载SDK：
 
-cd ~
+cd   ~
 
 git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
 ## 依赖安装
@@ -24,7 +24,7 @@ sudo apt install -y libspdlog-dev libopencv-dev libudev-dev
 + `将usrlib中的libcontrolcan.so  libmylibscan.so libmylibti5.so文件拷贝到/usr/lib/下`
 
 ```bash
-cd mechanical_arm_SDK-docs/code/usrlib
+cd ~/mechanical_arm_SDK-docs/code/usrlib
 sudo cp * /usr/lib
 ```
 
@@ -51,7 +51,7 @@ sudo make install
 
 ```shell
 首次编译需要执行以下两条命令
-cd mechanical_arm_SDK-docs/code/src
+cd ~/mechanical_arm_SDK-docs/code/src
 export CPLUS_INCLUDE_PATH=~/mechanical_arm_SDK-docs/code/include:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/mechanical_arm_SDK-docs/code/include/can
 
