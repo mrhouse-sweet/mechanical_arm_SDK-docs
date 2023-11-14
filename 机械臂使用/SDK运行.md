@@ -28,19 +28,7 @@ cd ~/mechanical_arm_SDK-docs/code/usrlib
 sudo cp * /usr/lib
 ```
 
-+ [pybind11](https://pybind11.readthedocs.io/en/stable/)
 
-如果需要使用python接口，需安装pybind11
-
-```bash
-# Install pybind11
-git clone https://github.com/pybind/pybind11.git
-cd pybind11
-mkdir build && cd build
-cmake .. -DPYBIND11_TEST=OFF
-make -j
-sudo make install
-```
 # SDK运行
 
 ## 实机控制
