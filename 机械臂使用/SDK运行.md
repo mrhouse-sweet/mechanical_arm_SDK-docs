@@ -19,6 +19,7 @@ git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
 + `libudev-dev`
 
 ```bash
+sudo apt update
 sudo apt install -y libspdlog-dev libopencv-dev libudev-dev
 ```
 + `将usrlib中的libcontrolcan.so  libmylibscan.so libmylibti5.so文件拷贝到/usr/lib/下`
@@ -44,7 +45,8 @@ export CPLUS_INCLUDE_PATH=~/mechanical_arm_SDK-docs/code/include:$CPLUS_INCLUDE_
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/mechanical_arm_SDK-docs/code/include/can
 
 然后进行编译：
-sudo sh ./gcc.sh
+sudo chmod +x gcc.sh
+sudo  ./gcc.sh
 或者使用：
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
