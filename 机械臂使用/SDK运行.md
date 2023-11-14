@@ -45,7 +45,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/mechanical_arm_SDK-docs/code/include/c
 
 然后进行编译：
 sudo chmod +x gcc.sh
-sudo  ./gcc.sh
+./gcc.sh
 或者使用：
 g++ main.cpp  -L./include -lmylibti5 -L./include/can -lmylibscan -lcontrolcan -lspdlog -lfmt -ludev -o move_sov
 ```
