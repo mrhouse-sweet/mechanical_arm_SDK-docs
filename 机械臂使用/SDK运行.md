@@ -11,6 +11,10 @@ sort: 3
 cd   ~
 
 git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
+
+注意：如果输入上面命令提示：Command 'git' not found, but can be installed with:sudo apt install git
+则在终端中输入命令安装git：sudo apt install git
+
 ## 依赖安装
 
 + `libspdlog-dev`
