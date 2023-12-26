@@ -32,6 +32,12 @@ cd ~/mechanical_arm_SDK-docs/code/usrlib
 sudo cp * /usr/lib
 ```
 
+```bash
+如果使用的是arm版本的，请使用以下目录的文件
+cd ~/mechanical_arm_SDK-docs/code/usrlib_arm
+sudo cp * /usr/lib
+```
+
 
 # SDK运行
 
