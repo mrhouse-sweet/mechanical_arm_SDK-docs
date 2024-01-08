@@ -11,9 +11,10 @@ sort: 3
 cd   ~
 
 git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
-
-注意：如果输入上面命令提示：Command 'git' not found, but can be installed with:sudo apt install git
+```bash
+  注意：如果输入上面命令提示：Command 'git' not found, but can be installed with:sudo apt install git
 则在终端中输入命令安装git：sudo apt install git
+```
 
 ## 依赖安装
 
@@ -23,12 +24,18 @@ git clone https://github.com/mrhouse-sweet/mechanical_arm_SDK-docs.git
 
 ```bash
 sudo apt update
-sudo apt install -y libspdlog-dev libopencv-dev libudev-dev
+sudo apt install -y libspdlog-dev libopencv-dev libudev-dev libfmt-dev
 ```
 + `将usrlib中的libcontrolcan.so  libmylibscan.so libmylibti5.so文件拷贝到/usr/lib/下`
 
 ```bash
 cd ~/mechanical_arm_SDK-docs/code/usrlib
+sudo cp * /usr/lib
+```
+
+```bash
+如果使用的是arm版本的，请使用以下目录的文件
+cd ~/mechanical_arm_SDK-docs/code/usrlib_arm
 sudo cp * /usr/lib
 ```
 
