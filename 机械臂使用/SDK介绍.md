@@ -70,6 +70,9 @@ sort: 1
 
 + void linear_move(Point start, Point end,float stepSize);//直线运动规划，参数：start：起点 ，end：终点，stepSize：步长
 
+  例如：linear_move(point_1,point_2,0.2);
+
+
 + int current_pose(float posz[]);//获取当前位姿
 
 + bool brake();//机械臂刹车
